@@ -1,12 +1,20 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import { screenName } from '../utils';
+import { Colors } from '../constant/color';
 
 const Stack = createNativeStackNavigator();
 
 export function FavoritesStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: Colors.dark,
+        },
+        headerTintColor: Colors.ligth,
+      }}
+    >
       <Stack.Screen
         name={screenName.favorites.favorites}
         component={FavoritesScreen}

@@ -5,6 +5,7 @@ import { FavoritesStack } from './FavoritesStack';
 import { RankingStack } from './RankingStack';
 import { SearchStack } from './SearchStack';
 import { AccountStack } from './AccountStack';
+import { Colors } from '../constant/color';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,10 +13,11 @@ const AppNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: '#00A680',
-        tabBarInactiveTintColor: '#646464',
+        tabBarActiveTintColor: Colors.ligth,
+        tabBarInactiveTintColor: Colors.gray,
         tabBarIcon: ({ color, size }) => iconOptions(route, color, size),
         headerShown: false,
+        tabBarStyle: { backgroundColor: Colors.dark },
       })}
     >
       <Tab.Screen
