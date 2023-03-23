@@ -11,3 +11,6 @@
 - yarn add @react-navigation/bottom-tabs
 
 - yarn add firebase
+- yarn add react-native-keyboard-aware-scroll-view
+- yarn add yup
+- yard add formik

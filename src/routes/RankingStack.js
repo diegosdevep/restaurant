@@ -12,7 +12,7 @@ export function RankingStack() {
         headerStyle: {
           backgroundColor: Colors.dark,
         },
-        headerTintColor: Colors.ligth,
+        headerTintColor: Colors.light,
       }}
     >
       <Stack.Screen

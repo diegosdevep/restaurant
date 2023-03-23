@@ -13,7 +13,7 @@ const AppNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: Colors.ligth,
+        tabBarActiveTintColor: Colors.light,
         tabBarInactiveTintColor: Colors.gray,
         tabBarIcon: ({ color, size }) => iconOptions(route, color, size),
         headerShown: false,

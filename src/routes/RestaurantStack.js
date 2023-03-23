@@ -13,7 +13,7 @@ export function RestaurantStack() {
         headerStyle: {
           backgroundColor: Colors.dark,
         },
-        headerTintColor: Colors.ligth,
+        headerTintColor: Colors.light,
       }}
     >
       <Stack.Screen
