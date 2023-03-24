@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../../constant/color';
+import { Colors } from '../../../constant/color';
 
 export const styles = StyleSheet.create({
   content: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignContent: 'center',
     marginTop: 30,
     marginHorizontal: '5%',
   },
@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     color: Colors.dark,
   },
   btnContainer: {
+    alignSelf: 'center',
     width: '85%',
     marginTop: 20,
     borderRadius: 6,

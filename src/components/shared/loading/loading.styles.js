@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: Colors.ligth,
+    color: Colors.light,
     fontWeight: 'bold',
   },
 });

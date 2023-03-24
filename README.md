@@ -14,3 +14,6 @@
 - yarn add react-native-keyboard-aware-scroll-view
 - yarn add yup
 - yard add formik
+- yarn add react-native-toast-message
+- yarn add expo-image-picker
+- yarn add axios

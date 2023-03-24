@@ -4,6 +4,7 @@ import { Image } from 'react-native-elements';
 import { styles } from './login.styles';
 import { useNavigation } from '@react-navigation/native';
 import { screenName } from '../../../utils/screenName';
+import LoginForm from '../../../components/Auth/loginForm/LoginForm';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -13,13 +14,17 @@ const LoginScreen = () => {
   }
 
   return (
-    <ScrollView>
+    <ScrollView centerContent={true}>
       <Image
         source={require('../../../../assets/5tenedores.png')}
         style={styles.image}
       />
       <View style={styles.content}>
-        <Text onPress={goToRegister}>Register</Text>
+        <LoginForm />
+        <Text onPress={goToRegister} style={styles.textRegister}>
+          You don't have an account yet?{' '}
+          <Text style={styles.btnRegister}>Sign up</Text>
+        </Text>
       </View>
     </ScrollView>
   );

@@ -1,9 +1,9 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { Image } from 'react-native-elements';
 import { styles } from './register.styles';
-import RegisterForm from '../../../components/shared/Auth/registerForm/RegisterForm';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import RegisterForm from '../../../components/Auth/registerForm/RegisterForm';
 
 const RegisterScreen = () => {
   return (

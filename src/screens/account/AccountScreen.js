@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import UserLoggedScreen from './UserLoggedScreen';
 import UserGuestScreen from './userGuest/UserGuestScreen';
 import Loading from '../../components/shared/loading/Loading';
+import UserLoggedScreen from './uselogged/UserLoggedScreen';
 
 const AccountScreen = () => {
   const [hasLogged, setHasLogged] = useState(null);
