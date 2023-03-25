@@ -10,6 +10,9 @@ import AccountOptions from '../../../components/Account/AccountOptions';
 const UserLoggedScreen = () => {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
+  const [_reload, setReload] = useState(false);
+
+  const onReload = () => setReload((prevState) => !prevState);
 
   const logout = async () => {
     const auth = getAuth();
@@ -20,7 +23,7 @@ const UserLoggedScreen = () => {
     <View>
       <InfoUser setLoading={setLoading} setLoadingText={setLoadingText} />
 
-      <AccountOptions />
+      <AccountOptions onReload={onReload} />
 
       <Button
         title='Logout'

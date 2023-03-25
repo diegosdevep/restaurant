@@ -1,11 +1,35 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon, ListItem } from 'react-native-elements';
 import { map } from 'lodash';
 import { Colors } from '../../constant/color';
+import Modal from '../shared/modal/Modal';
+import ChangeDisplayName from './changeDisplayName/ChangeDisplayName';
 
-const AccountOptions = () => {
-  const menuOptions = getMenuOptions();
+const AccountOptions = ({ onReload }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [renderComponent, setRenderComponent] = useState(null);
+
+  const onCloseModal = () => setShowModal((prevState) => !prevState);
+
+  const selectedComponent = (key) => {
+    console.log(key);
+    if (key === 'displayName') {
+      setRenderComponent(
+        <ChangeDisplayName onClose={onCloseModal} onReload={onReload} />
+      );
+    }
+    if (key === 'email') {
+      setRenderComponent(<Text>Cambiando email</Text>);
+    }
+    if (key === 'password') {
+      selectedComponent(<Text>Cambiando password</Text>);
+    }
+
+    onCloseModal();
+  };
+
+  const menuOptions = getMenuOptions(selectedComponent);
 
   return (
     <View>
@@ -28,11 +52,14 @@ const AccountOptions = () => {
           </ListItem>
         );
       })}
+      <Modal show={showModal} close={() => onCloseModal()}>
+        {renderComponent}
+      </Modal>
     </View>
   );
 };
 
-function getMenuOptions() {
+function getMenuOptions(selectedComponent) {
   return [
     {
       title: 'Change Name and Lastname',
@@ -41,7 +68,7 @@ function getMenuOptions() {
       iconColorLeft: Colors.dark,
       iconNameRight: 'chevron-right',
       iconColorRight: Colors.dark,
-      onPress: () => console.log('change name'),
+      onPress: () => selectedComponent('displayName'),
     },
     {
       title: 'Change Email',
@@ -50,7 +77,7 @@ function getMenuOptions() {
       iconColorLeft: Colors.dark,
       iconNameRight: 'chevron-right',
       iconColorRight: Colors.dark,
-      onPress: () => console.log('change email'),
+      onPress: () => selectedComponent('email'),
     },
     {
       title: 'Change Password',
@@ -59,7 +86,7 @@ function getMenuOptions() {
       iconColorLeft: Colors.dark,
       iconNameRight: 'chevron-right',
       iconColorRight: Colors.dark,
-      onPress: () => console.log('change password'),
+      onPress: () => selectedComponent('password'),
     },
   ];
 }
