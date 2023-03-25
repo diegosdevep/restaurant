@@ -6,6 +6,7 @@ import { Colors } from '../../constant/color';
 import Modal from '../shared/modal/Modal';
 import ChangeDisplayName from './changeDisplayName/ChangeDisplayName';
 import ChangeEmail from './changeEmail/ChangeEmail';
+import ChangePassword from './changePassword/ChangePassword';
 
 const AccountOptions = ({ onReload }) => {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +15,6 @@ const AccountOptions = ({ onReload }) => {
   const onCloseModal = () => setShowModal((prevState) => !prevState);
 
   const selectedComponent = (key) => {
-    console.log(key);
     if (key === 'displayName') {
       setRenderComponent(
         <ChangeDisplayName onClose={onCloseModal} onReload={onReload} />
@@ -26,7 +26,7 @@ const AccountOptions = ({ onReload }) => {
       );
     }
     if (key === 'password') {
-      selectedComponent(<Text>Cambiando password</Text>);
+      setRenderComponent(<ChangePassword onClose={onCloseModal} />);
     }
 
     onCloseModal();

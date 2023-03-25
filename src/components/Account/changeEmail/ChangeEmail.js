@@ -19,6 +19,7 @@ const ChangeEmail = ({ onReload, onClose }) => {
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
+    validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
         const currentUser = getAuth().currentUser;
