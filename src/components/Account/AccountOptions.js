@@ -5,6 +5,7 @@ import { map } from 'lodash';
 import { Colors } from '../../constant/color';
 import Modal from '../shared/modal/Modal';
 import ChangeDisplayName from './changeDisplayName/ChangeDisplayName';
+import ChangeEmail from './changeEmail/ChangeEmail';
 
 const AccountOptions = ({ onReload }) => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,9 @@ const AccountOptions = ({ onReload }) => {
       );
     }
     if (key === 'email') {
-      setRenderComponent(<Text>Cambiando email</Text>);
+      setRenderComponent(
+        <ChangeEmail onClose={onCloseModal} onReload={onReload} />
+      );
     }
     if (key === 'password') {
       selectedComponent(<Text>Cambiando password</Text>);
