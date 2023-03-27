@@ -17,3 +17,5 @@
 - yarn add react-native-toast-message
 - yarn add expo-image-picker
 - yarn add axios
+- yarn add expo-location
+- yarn add react-native-maps

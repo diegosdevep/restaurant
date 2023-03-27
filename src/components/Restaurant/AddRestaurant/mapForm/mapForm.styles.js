@@ -1,14 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../constant/color';
+import { Colors } from '../../../../constant/color';
 
 export const styles = StyleSheet.create({
-  content: {
-    minWidth: '90%',
-    alignContent: 'center',
-    paddingVertical: 15,
+  mapStyle: {
+    width: '100%',
+    height: 550,
   },
   btnContainer: {
-    width: '85%',
+    width: '45%',
     marginTop: 20,
     borderRadius: 6,
     alignSelf: 'center',
