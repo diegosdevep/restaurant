@@ -10,7 +10,7 @@ const Loading = (props) => {
   return (
     <Overlay isVisible={show} overlayStyle={styles.overlay}>
       <View style={styles.view}>
-        <ActivityIndicator size='large' color={Colors.light} />
+        <ActivityIndicator size='large' color={Colors.dark} />
         {text && <Text style={styles.text}>{text}</Text>}
       </View>
     </Overlay>

@@ -5,11 +5,11 @@ export const styles = StyleSheet.create({
   overlay: {
     height: 130,
     width: 130,
-    backgroundColor: Colors.secondary,
-    borderColor: Colors.dark,
+    backgroundColor: Colors.light,
+    borderColor: Colors.light,
     borderWidth: 2,
     borderRadius: 100,
-    shadowColor: Colors.dark,
+    shadowColor: Colors.light,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 4,
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: Colors.light,
+    color: Colors.dark,
     fontWeight: 'bold',
   },
 });

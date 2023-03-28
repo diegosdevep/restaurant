@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements';
 import { styles } from './AddRestaurant.styles';
 import { useFormik } from 'formik';
 import { initialValues, validationSchema } from './AddRestaurant.data';
+import UploadImageForm from '../../../components/Restaurant/AddRestaurant/UploadImageForm/UploadImageForm';
 
 const AddRestaurantScreen = () => {
   const formik = useFormik({
@@ -19,6 +20,7 @@ const AddRestaurantScreen = () => {
   return (
     <View>
       <InfoForm formik={formik} />
+      <UploadImageForm formik={formik} />
       <Button
         title='Add Restaurant'
         containerStyle={styles.btnContainer}

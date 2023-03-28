@@ -19,3 +19,5 @@
 - yarn add axios
 - yarn add expo-location
 - yarn add react-native-maps
+- yarn add uuid
+- yarn add react-native-get-random-values
