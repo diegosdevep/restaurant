@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { Alert, ScrollView, Text } from 'react-native';
 import { Avatar, Icon } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
-import { map } from 'lodash';
+import { map, filter } from 'lodash';
 import { Colors } from '../../../../constant/color';
 import { styles } from './uploadImageForm.styles';
 import Loading from '../../../shared/loading/Loading';
@@ -46,12 +46,32 @@ const UploadImageForm = ({ formik }) => {
   const updatePhotoRestaurant = async (imagePath) => {
     const storage = getStorage();
     const imageRef = ref(storage, imagePath);
-
     const imageUrl = await getDownloadURL(imageRef);
 
     formik.setFieldValue('images', [...formik.values.images, imageUrl]);
 
     setIsLoading(false);
+  };
+
+  const removeImage = (img) => {
+    Alert.alert(
+      'Delete image',
+      'Are you sure to delete this image?',
+      [
+        { text: 'Canceled', style: 'cancel' },
+        {
+          text: 'Delete',
+          onPress: () => {
+            const result = filter(
+              formik.values.images,
+              (image) => image !== img
+            );
+            formik.setFieldValue('images', result);
+          },
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   return (
@@ -74,6 +94,7 @@ const UploadImageForm = ({ formik }) => {
             key={image}
             source={{ uri: image }}
             containerStyle={styles.imageStyle}
+            onPress={() => removeImage(image)}
           />
         ))}
       </ScrollView>
