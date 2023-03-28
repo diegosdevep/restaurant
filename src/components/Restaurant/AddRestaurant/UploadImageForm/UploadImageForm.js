@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import { Alert, ScrollView, Text } from 'react-native';
 import { Avatar, Icon } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
 import { map, filter } from 'lodash';
 import { Colors } from '../../../../constant/color';
@@ -61,7 +67,15 @@ const UploadImageForm = ({ formik }) => {
         { text: 'Canceled', style: 'cancel' },
         {
           text: 'Delete',
-          onPress: () => {
+          onPress: async () => {
+            const storage = getStorage();
+            const imageRef = ref(storage, img);
+            try {
+              await deleteObject(imageRef);
+            } catch (error) {
+              console.log('Error deleting image: ', error);
+            }
+
             const result = filter(
               formik.values.images,
               (image) => image !== img
