@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
   },
   btnContainer: {
     width: '85%',
-    marginTop: 20,
+    marginTop: 5,
+    marginBottom: 20,
     borderRadius: 6,
     alignSelf: 'center',
   },

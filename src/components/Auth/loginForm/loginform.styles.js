@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
   input: {
     width: '100%',
     marginTop: 20,
+    textTransform: 'uppercase',
   },
   icon: {
     color: Colors.dark,
