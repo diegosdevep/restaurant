@@ -23,7 +23,7 @@ const AddRestaurantScreen = () => {
       try {
         const newData = formValues;
         newData.id = uuid();
-        newData.createAt = new Date();
+        newData.createdAt = new Date();
 
         await setDoc(doc(db, 'restaurants', newData.id), newData);
 

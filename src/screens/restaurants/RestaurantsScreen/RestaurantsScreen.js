@@ -6,9 +6,14 @@ import { screenName } from '../../../utils';
 import { Colors } from '../../../constant/color';
 import { styles } from './RestaurantScreen.styles';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { query, onSnapshot, collection, orderBy } from 'firebase/firestore';
+import { db } from '../../../firebase/firebase';
+import Loading from '../../../components/shared/loading/Loading';
+import ListRestaurants from '../../../components/Restaurant/ListRestaurants/ListRestaurants';
 
 const RestaurantsScreen = () => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [restaurants, setRestaurants] = useState(null);
   const navigation = useNavigation();
 
   function goToAddRestaurant() {
@@ -22,9 +27,22 @@ const RestaurantsScreen = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const q = query(collection(db, 'restaurants'));
+    orderBy('createdAt', 'desc');
+
+    onSnapshot(q, (snapshopt) => {
+      setRestaurants(snapshopt.docs);
+    });
+  }, []);
+
   return (
     <View style={styles.content}>
-      <Text>RestaurantsScreen</Text>
+      {!restaurants ? (
+        <Loading show text='Loading...' />
+      ) : (
+        <ListRestaurants restaurants={restaurants} />
+      )}
 
       {currentUser && (
         <Icon

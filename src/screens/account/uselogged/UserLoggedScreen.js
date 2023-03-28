@@ -10,7 +10,7 @@ import AccountOptions from '../../../components/Account/AccountOptions';
 const UserLoggedScreen = () => {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
-  const [_reload, setReload] = useState(false);
+  const [_, setReload] = useState(false);
 
   const onReload = () => setReload((prevState) => !prevState);
 
