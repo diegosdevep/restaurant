@@ -14,6 +14,7 @@ import Carousel from '../../../components/shared/carousel/Carousel';
 import Loading from '../../../components/shared/loading/Loading';
 import Header from '../../../components/Restaurant/Restaurant/Header/Header';
 import Info from '../../../components/Restaurant/Restaurant/Info/Info';
+import BtnReviewForm from '../../../components/Restaurant/Restaurant/BtnReviewForm/BtnReviewForm';
 
 const RestaurantScreen = ({ route }) => {
   const [restaurant, setRestaurant] = useState(null);
@@ -34,6 +35,7 @@ const RestaurantScreen = ({ route }) => {
       <Carousel arrayImages={restaurant.images} width={width} height={250} />
       <Header restaurant={restaurant} />
       <Info restaurant={restaurant} />
+      <BtnReviewForm idRestaurant={restaurant.id} />
     </ScrollView>
   );
 };

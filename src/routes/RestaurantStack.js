@@ -4,6 +4,7 @@ import { Colors } from '../constant/color';
 import AddRestaurantScreen from '../screens/restaurants/AddRestaurantScreen/AddRestaurantScreen';
 import RestaurantsScreen from '../screens/restaurants/RestaurantsScreen/RestaurantsScreen';
 import RestaurantScreen from '../screens/restaurants/RestaurantScreen/RestaurantScreen';
+import AddReviewRestaurant from '../components/Restaurant/Restaurant/AddReviewRestaurant/AddReviewRestaurant';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,11 @@ export function RestaurantStack() {
         name={screenName.restaurant.restaurant}
         component={RestaurantScreen}
         options={{ title: 'Restaurant' }}
+      />
+      <Stack.Screen
+        name={screenName.restaurant.addReviewRestaurant}
+        component={AddReviewRestaurant}
+        options={{ title: 'New Review' }}
       />
     </Stack.Navigator>
   );
