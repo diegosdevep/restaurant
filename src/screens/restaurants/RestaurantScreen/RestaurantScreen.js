@@ -15,6 +15,7 @@ import Loading from '../../../components/shared/loading/Loading';
 import Header from '../../../components/Restaurant/Restaurant/Header/Header';
 import Info from '../../../components/Restaurant/Restaurant/Info/Info';
 import BtnReviewForm from '../../../components/Restaurant/Restaurant/BtnReviewForm/BtnReviewForm';
+import Reviews from '../../../components/Restaurant/Restaurant/Reviews/Reviews';
 
 const RestaurantScreen = ({ route }) => {
   const [restaurant, setRestaurant] = useState(null);
@@ -36,6 +37,7 @@ const RestaurantScreen = ({ route }) => {
       <Header restaurant={restaurant} />
       <Info restaurant={restaurant} />
       <BtnReviewForm idRestaurant={restaurant.id} />
+      <Reviews idRestaurant={route.params.id} />
     </ScrollView>
   );
 };
