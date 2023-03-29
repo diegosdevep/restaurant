@@ -12,7 +12,7 @@ const Header = ({ restaurant }) => {
         <Rating
           imageSize={20}
           readOnly
-          startingValue={4}
+          startingValue={restaurant.ratingMedia | 0}
           tintColor={Colors.light}
         />
       </View>
