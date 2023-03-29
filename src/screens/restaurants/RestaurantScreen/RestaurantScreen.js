@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, Dimensions } from 'react-native';
 import {
   doc,
   query,
@@ -10,9 +10,15 @@ import {
 } from 'firebase/firestore';
 import { db } from '../../../firebase/firebase';
 import { styles } from './restaurantScreen.styles';
+import Carousel from '../../../components/shared/carousel/Carousel';
+import Loading from '../../../components/shared/loading/Loading';
+import Header from '../../../components/Restaurant/Restaurant/Header/Header';
+import Info from '../../../components/Restaurant/Restaurant/Info/Info';
 
 const RestaurantScreen = ({ route }) => {
   const [restaurant, setRestaurant] = useState(null);
+
+  const { width, height } = Dimensions.get('window');
 
   useEffect(() => {
     setRestaurant(null);
@@ -21,10 +27,14 @@ const RestaurantScreen = ({ route }) => {
     });
   }, [route.params.id]);
 
+  if (!restaurant) return <Loading show text='Loading restaurant' />;
+
   return (
-    <View>
-      <Text>RestaurantScreen</Text>
-    </View>
+    <ScrollView style={styles.content}>
+      <Carousel arrayImages={restaurant.images} width={width} height={250} />
+      <Header restaurant={restaurant} />
+      <Info restaurant={restaurant} />
+    </ScrollView>
   );
 };
 

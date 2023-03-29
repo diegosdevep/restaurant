@@ -20,7 +20,7 @@ export function RestaurantStack() {
       <Stack.Screen
         name={screenName.restaurant.restaurants}
         component={RestaurantsScreen}
-        options={{ title: ' RestaurantsStack' }}
+        options={{ title: ' Restaurants' }}
       />
       <Stack.Screen
         name={screenName.restaurant.addRestaurant}
