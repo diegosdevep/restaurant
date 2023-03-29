@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ScrollView, Dimensions } from 'react-native';
-import {
-  doc,
-  query,
-  onSnapshot,
-  collection,
-  where,
-  orderBy,
-} from 'firebase/firestore';
+import { ScrollView, Dimensions } from 'react-native';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../../firebase/firebase';
 import { styles } from './restaurantScreen.styles';
 import Carousel from '../../../components/shared/carousel/Carousel';
@@ -16,11 +9,12 @@ import Header from '../../../components/Restaurant/Restaurant/Header/Header';
 import Info from '../../../components/Restaurant/Restaurant/Info/Info';
 import BtnReviewForm from '../../../components/Restaurant/Restaurant/BtnReviewForm/BtnReviewForm';
 import Reviews from '../../../components/Restaurant/Restaurant/Reviews/Reviews';
+import BtnFavorites from '../../../components/Restaurant/Restaurant/BtnFavorites/BtnFavorites';
 
 const RestaurantScreen = ({ route }) => {
   const [restaurant, setRestaurant] = useState(null);
 
-  const { width, height } = Dimensions.get('window');
+  const { width } = Dimensions.get('window');
 
   useEffect(() => {
     setRestaurant(null);
@@ -38,6 +32,7 @@ const RestaurantScreen = ({ route }) => {
       <Info restaurant={restaurant} />
       <BtnReviewForm idRestaurant={restaurant.id} />
       <Reviews idRestaurant={route.params.id} />
+      <BtnFavorites idRestaurant={route.params.id} />
     </ScrollView>
   );
 };
