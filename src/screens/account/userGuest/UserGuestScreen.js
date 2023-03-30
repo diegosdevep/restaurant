@@ -14,26 +14,28 @@ const UserGuestScreen = () => {
   }
 
   return (
-    <ScrollView centerContent={true}>
-      <View style={styles.content}>
-        <Image
-          source={require('../../../../assets/guesst.png')}
-          style={styles.image}
-        />
-        <Text style={styles.title}>RestoApp</Text>
-        <Text style={styles.description}>
-          Únete a nuestra comunidad de amantes de la comida. Descubre los
-          mejores restaurantes de la ciudad, lee opiniones de otros usuarios,
-          pide comida para llevar o a domicilio y accede a ofertas exclusivas.
-          ¡Regístrate ahora!
-        </Text>
-        <Button
-          onPress={goToLogin}
-          title='Ver tu Perfil'
-          buttonStyle={styles.btnStyle}
-        />
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.content}>
+          <Image
+            source={require('../../../../assets/guesst.png')}
+            style={styles.image}
+          />
+          <Text style={styles.title}>RestoApp</Text>
+          <Text style={styles.description}>
+            Únete a nuestra comunidad de amantes de la comida. Descubre los
+            mejores restaurantes de la ciudad, lee opiniones de otros usuarios,
+            pide comida para llevar o a domicilio y accede a ofertas exclusivas.
+            ¡Regístrate ahora!
+          </Text>
+          <Button
+            onPress={goToLogin}
+            title='Ver tu Perfil'
+            buttonStyle={styles.btnStyle}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 

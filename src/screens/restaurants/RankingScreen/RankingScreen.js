@@ -7,7 +7,6 @@ import {
   orderBy,
   limit,
 } from 'firebase/firestore';
-import { styles } from './rankingScreen.styles';
 import { db } from '../../../firebase/firebase';
 import RestaurantRanking from '../../../components/Restaurant/Restaurant/Ranking/RestaurantRanking';
 import { map } from 'lodash';

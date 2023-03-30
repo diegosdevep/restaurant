@@ -2,6 +2,15 @@ import { StyleSheet } from 'react-native';
 import { Colors } from '../../../constant/color';
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   image: {
     resizeMode: 'contain',
     width: '100%',

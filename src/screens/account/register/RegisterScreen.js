@@ -7,7 +7,7 @@ import RegisterForm from '../../../components/Auth/registerForm/RegisterForm';
 
 const RegisterScreen = () => {
   return (
-    <KeyboardAwareScrollView centerContent={true}>
+    <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
       <Image
         source={require('../../../../assets/5tenedores.png')}
         style={styles.image}

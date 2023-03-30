@@ -14,19 +14,21 @@ const LoginScreen = () => {
   }
 
   return (
-    <ScrollView centerContent={true}>
-      <Image
-        source={require('../../../../assets/5tenedores.png')}
-        style={styles.image}
-      />
-      <View style={styles.content}>
-        <LoginForm />
-        <Text onPress={goToRegister} style={styles.textRegister}>
-          You don't have an account yet?{' '}
-          <Text style={styles.btnRegister}>Sign up</Text>
-        </Text>
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Image
+          source={require('../../../../assets/5tenedores.png')}
+          style={styles.image}
+        />
+        <View style={styles.content}>
+          <LoginForm />
+          <Text onPress={goToRegister} style={styles.textRegister}>
+            You don't have an account yet?{' '}
+            <Text style={styles.btnRegister}>Sign up</Text>
+          </Text>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
