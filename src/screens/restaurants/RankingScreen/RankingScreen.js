@@ -18,7 +18,7 @@ const RankingScreen = () => {
     const q = query(
       collection(db, 'restaurants'),
       orderBy('ratingMedia', 'desc'),
-      limit(4)
+      limit(5)
     );
 
     onSnapshot(q, (snapshot) => {
