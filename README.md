@@ -23,6 +23,8 @@
 - yarn add react-native-get-random-values
 - yarn add react-native-snap-carousel
 - yarn add react-native-open-maps
+- npm install dotenv
+- yarn add expo-constants
 
 ## Fix problem de package carousel
 

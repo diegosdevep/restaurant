@@ -37,10 +37,13 @@ const BtnFavorites = ({ idRestaurant }) => {
   const onReload = () => setIsReload((prevState) => !prevState);
 
   const getFavorites = async () => {
+    const userId = auth.currentUser?.uid;
+    if (!userId) return;
+
     const q = query(
       collection(db, 'favorites'),
       where('idRestaurant', '==', idRestaurant),
-      where('idUser', '==', auth.currentUser.uid)
+      where('idUser', '==', userId)
     );
 
     const result = await getDocs(q);

@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import RankingScreen from '../screens/RankingScreen';
 import { screenName } from '../utils';
 import { Colors } from '../constant/color';
+import RankingScreen from '../screens/restaurants/RankingScreen/RankingScreen';
 
 const Stack = createNativeStackNavigator();
 
