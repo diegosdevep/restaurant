@@ -17,7 +17,7 @@ const LoginScreen = () => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Image
-          source={require('../../../../assets/5tenedores.png')}
+          source={require('../../../../assets/splash.png')}
           style={styles.image}
         />
         <View style={styles.content}>

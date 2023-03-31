@@ -18,7 +18,7 @@ const UserGuestScreen = () => {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.content}>
           <Image
-            source={require('../../../../assets/guesst.png')}
+            source={require('../../../../assets/guesstimg.png')}
             style={styles.image}
           />
           <Text style={styles.title}>RestoApp</Text>

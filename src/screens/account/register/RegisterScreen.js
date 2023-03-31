@@ -9,7 +9,7 @@ const RegisterScreen = () => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
       <Image
-        source={require('../../../../assets/5tenedores.png')}
+        source={require('../../../../assets/registerimg.png')}
         style={styles.image}
       />
       <View style={styles.content}>
